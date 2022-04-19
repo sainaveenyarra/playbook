@@ -1,0 +1,14 @@
+---
+- hosts: pr
+  remote_user: ansible
+  become_user: root
+  become: yes
+  tasks:
+   - name: copy the patch script
+     copy: src=script.sh dest=/tmp/
+   - name: set the permissions
+     file: path=/tmp/script.sh owner=root group=root mode=0755
+   - name: execute the script
+     shell: /bin/bash /tmp/script.sh
+   - name: reboot the host
+     command: /sbin/reboot

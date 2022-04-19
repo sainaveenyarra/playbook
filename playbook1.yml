@@ -1,0 +1,6 @@
+---
+- hosts: pr
+  tasks:
+   - name: install httpd
+     yum: name=httpd state=latest
+     become: yes

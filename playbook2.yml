@@ -1,0 +1,6 @@
+---
+- hosts: pr
+  tasks:
+   - name: copy a file
+     copy: src=/etc/fstab dest=/tmp/
+     become: yes
