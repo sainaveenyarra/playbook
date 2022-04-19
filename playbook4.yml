@@ -1,0 +1,6 @@
+---
+- hosts: pr
+  tasks:
+   - name: create a file
+     file: dest=/tmp/gitfile state=touch
+     become: yes

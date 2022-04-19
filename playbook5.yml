@@ -1,0 +1,6 @@
+---
+- hosts: pr
+  tasks:
+   - name: start the httpd service
+     service: name=httpd state=started
+     become: yes
